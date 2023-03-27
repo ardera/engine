@@ -301,10 +301,12 @@ if (is_mac) {
     ]
   }
 
-  group("flutter_embedder_framework") {
-    deps = [
-      "//flutter/shell/platform/embedder:flutter_embedder_framework_archive",
-    ]
+  if (!embedder_for_target) {
+    group("flutter_embedder_framework") {
+      deps = [
+        "//flutter/shell/platform/embedder:flutter_embedder_framework_archive",
+      ]
+    }
   }
 }
 

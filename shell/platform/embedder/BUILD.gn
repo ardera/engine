@@ -507,7 +507,7 @@ group("flutter_engine") {
   }
 }
 
-if (is_mac) {
+if (is_mac && !embedder_for_target) {
   zip_bundle("flutter_embedder_framework_archive") {
     deps = [ ":generate_symlinks" ]
     output = "$full_platform_name/FlutterEmbedder.framework.zip"
